@@ -200,7 +200,7 @@ class words_alignment_inf:
                            key=self.TruthWordsCount.get,
                            reverse=True)
 
-      assert self.char2word is not None,  "call collect_errors_information() before print_analysis()"
+      assert self.char2word is not None,  "call collect_errors_information befor print_analysis"
 
       for w in sorted_keys:
         word = self.char2word[ord(w)]

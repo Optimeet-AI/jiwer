@@ -1,6 +1,6 @@
 from .measures import *
 from .transforms import *
 from .transformations import *
-import .measures
+from .measures import words_alignment_inf, words_alignment
 
 name = "jiwer"
