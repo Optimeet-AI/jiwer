@@ -75,6 +75,44 @@ hypothesis = ["i kan cpell", "i hop"]
 error = cer(ground_truth, hypothesis)
 ```
 
+# Detailed errors report
+
+```python
+import jiwer
+ground_truth = "hello world"
+hypothesis = "hello duck"
+error = jiwer.wer(ground_truth, hypothesis, get_alignment=True)
+print(error)
+jiwer.words_alignment.collect_errors_information()
+jiwer.words_alignment.print_analysis()
+```
+
+output
+```
+>>> jiwer.words_alignment.collect_errors_information()
+
+### sentence   0, truth length:  2, hyp lenngth  2
+  0 hello        0 hello      'COR'
+  1 world        1 duck       'SUB'
+
+>>> jiwer.words_alignment.print_analysis()
+
+------------------------------------------
+Detailed recognition performance analysis.
+
+Truth words count.
+hello          1
+world          1
+
+Deletions words count.
+
+Insersions words count.
+
+Substitutions words count.
+True-word  Hyp-word   Count
+world      duck           1
+```
+
 # pre-processing
 
 It might be necessary to apply some pre-processing steps on either the hypothesis or
